@@ -44,7 +44,7 @@ class DataService {
             for cityDictionary in dictionary {
 //                // lấy từng phần tử trong city
                 if let city = City(dictionary: cityDictionary) {
-                    print(city.name, city.cityCode)
+//                    print(city.name, city.cityCode)
                     _dataCiti?.append(city)
                 }
             }
@@ -74,12 +74,22 @@ class DataService {
             guard let dictionary = plistDict["Districts"] as? [DICT] else { return }
             for district in dictionary {
                 if let dict = Distric(dictionary: district) {
-                    print(dict.name , dict.districtCode , dict .citiCode)
+//                    print(dict.name , dict.districtCode , dict .citiCode)
                     _distric?.append(dict)
                 }
             }
         } catch  {
             print("Error")
         }
+    }
+    func getplist(citiData : Int) -> [Distric] {
+        getDataDistric()
+        var datafilited : [Distric] = []
+        for score in _distric ?? [] {
+            if score.citiCode == citiData {
+                datafilited.append(score)
+            }
+        }
+        return datafilited
     }
 }

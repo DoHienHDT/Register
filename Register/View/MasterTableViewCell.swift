@@ -8,10 +8,10 @@
 
 import UIKit
 
-class TableViewCell: UITableViewCell {
+class MasterTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var citylabel: UILabel!
-    
+    var cell : UITableViewCell!
     override func awakeFromNib() {
         super.awakeFromNib()
     }

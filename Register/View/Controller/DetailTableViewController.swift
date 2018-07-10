@@ -9,10 +9,15 @@
 import UIKit
 
 class DetailTableViewController: UITableViewController {
-
+    let defaultsDictric = UserDefaults.standard
+    var cityCode: Int?
+    var array : [Distric] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if cityCode != nil {
+            array = DataService.shared.getplist(citiData: cityCode!)
+        }
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -34,20 +39,22 @@ class DetailTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return DataService.shared.distric.count
+        return array.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "hihi", for: indexPath) as! DetailTableViewCell
 
-        cell.nameLabel.text = DataService.shared.distric[indexPath.row].name
-        cell.cityCodeLabel.text = String(DataService.shared.distric[indexPath.row].citiCode)
-        cell.districtCodeLabel.text = String(DataService.shared.distric[indexPath.row].districtCode)
+        cell.nameLabel.text = array[indexPath.row].name
+        cell.cityCodeLabel.text = String(array[indexPath.row].citiCode)
+        cell.districtCodeLabel.text = String(array[indexPath.row].districtCode)
         return cell
     }
     
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        defaultsDictric.set(array[indexPath.row].name, forKey: "distric")
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
