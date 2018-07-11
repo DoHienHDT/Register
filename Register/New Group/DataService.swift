@@ -16,21 +16,21 @@ typealias DICT = Dictionary<AnyHashable, Any>
 
 class DataService {
     static let shared: DataService = DataService()
-    private var _dataCiti : [City]?
-    var dataCiti : [City] {
+    private var _dataCities : [City]?
+    var dataCities : [City] {
         get {
-            if _dataCiti == nil {
+            if _dataCities == nil {
                 getDataCity()
             }
-            return _dataCiti ?? []
+            return _dataCities ?? []
         }
         set {
-            _dataCiti = newValue
+            _dataCities = newValue
         }
     }
     
     func getDataCity() {
-        _dataCiti = []
+        _dataCities = []
         // đường dẫn đến
         guard let plistPath = Bundle.main.path(forResource: "Cities", ofType: "plist") else { return }
         // đọc nội dung
@@ -45,28 +45,28 @@ class DataService {
 //                // lấy từng phần tử trong city
                 if let city = City(dictionary: cityDictionary) {
 //                    print(city.name, city.cityCode)
-                    _dataCiti?.append(city)
+                    _dataCities?.append(city)
                 }
             }
         } catch  {
             print("Error")
         }
     }
-    private var _distric : [Distric]?
-    var distric : [Distric] {
+    private var _districts : [Distric]?
+    var districts : [Distric] {
         get {
-            if _distric == nil {
-                getDataDistric()
+            if _districts == nil {
+                getDataDistrict()
             }
-            return _distric ?? []
+            return _districts ?? []
         }
         set {
-            _distric = newValue
+            _districts = newValue
         }
     }
     
-    func getDataDistric() {
-        _distric = []
+    func getDataDistrict() {
+        _districts = []
         guard let plistPath = Bundle.main.path(forResource: "Districts", ofType: "plist")  else { return }
         guard let plisData = FileManager.default.contents(atPath: plistPath) else { return  }
         do {
@@ -75,18 +75,18 @@ class DataService {
             for district in dictionary {
                 if let dict = Distric(dictionary: district) {
 //                    print(dict.name , dict.districtCode , dict .citiCode)
-                    _distric?.append(dict)
+                    _districts?.append(dict)
                 }
             }
         } catch  {
             print("Error")
         }
     }
-    func getplist(citiData : Int) -> [Distric] {
-        getDataDistric()
+    func getPlist(citiData : Int) -> [Distric] {
+        getDataDistrict()
         var datafilited : [Distric] = []
-        for score in _distric ?? [] {
-            if score.citiCode == citiData {
+        for score in _districts ?? [] {
+            if score.cityCode == citiData {
                 datafilited.append(score)
             }
         }

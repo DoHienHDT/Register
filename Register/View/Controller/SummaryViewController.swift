@@ -14,19 +14,20 @@ class SummaryViewController: UIViewController {
     @IBOutlet weak var defaultDictrict: UILabel!
     @IBOutlet weak var defaultGender: UILabel!
     @IBOutlet weak var defaultAge: UILabel!
+    @IBOutlet weak var defaultName: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         configure()
     }
     func configure() {
-        if let name = UserDefaults.standard.string(forKey: "name"),let nameDistrict = UserDefaults.standard.string(forKey: "distric"),let nameGender = UserDefaults.standard.string(forKey: "gender"), let nameAge = UserDefaults.standard.string(forKey: "age") {
+        if let name = UserDefaults.standard.string(forKey: "city"),let nameDistrict = UserDefaults.standard.string(forKey: "distric"),let nameGender = UserDefaults.standard.string(forKey: "gender"), let nameAge = UserDefaults.standard.string(forKey: "age"), let nameText = UserDefaults.standard.string(forKey: "name") {
             defaultCiti.text = name
             defaultAge.text = nameAge
             defaultGender.text = nameGender
             defaultDictrict.text = nameDistrict
+            defaultName.text = nameText
         }
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -46,3 +47,4 @@ class SummaryViewController: UIViewController {
     */
 
 }
+

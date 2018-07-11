@@ -32,17 +32,16 @@ class MasterTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return DataService.shared.dataCiti.count
+        return DataService.shared.dataCities.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as? MasterTableViewCell
-        cell?.nameLabel.text = DataService.shared.dataCiti[indexPath.row].name
-        cell?.citylabel.text = String(DataService.shared.dataCiti[indexPath.row].cityCode)
-        return cell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        cell.textLabel?.text = DataService.shared.dataCities[indexPath.row].name
+        return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            defaults.set(DataService.shared.dataCiti[indexPath.row].name, forKey: "name")
+            defaults.set(DataService.shared.dataCities[indexPath.row].name, forKey: "city")
         }
         
         
@@ -51,7 +50,7 @@ class MasterTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let detailViewController = segue.destination as? DetailTableViewController{
             if let index = tableView.indexPathForSelectedRow {
-                detailViewController.cityCode = DataService.shared.dataCiti[index.row].cityCode
+                detailViewController.cityCode = DataService.shared.dataCities[index.row].cityCode
             }
         }
     }

@@ -8,7 +8,7 @@
 
 import Foundation
 class Distric {
-    var citiCode : Int
+    var cityCode : Int
     var districtCode : Int
     var name : String
     init?(dictionary: DICT) {
@@ -17,7 +17,7 @@ class Distric {
         
         guard let districtCode = dictionary["DistrictCode"] as? Int else { return nil }
         guard let name = dictionary["Name"] as? String else { return nil }
-        self.citiCode = citiCode
+        self.cityCode = citiCode
         self.districtCode = districtCode
         self.name = name
     }

@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		801C3CD020F34C1B008BBBD1 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801C3CCF20F34C1B008BBBD1 /* SummaryViewController.swift */; };
-		80264C8D20EB644F00928EA8 /* MasterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80264C8C20EB644F00928EA8 /* MasterTableViewCell.swift */; };
-		80264C8F20EB786100928EA8 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80264C8E20EB786100928EA8 /* DetailTableViewCell.swift */; };
 		808BB14A20E617C700A17D0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808BB14920E617C700A17D0B /* AppDelegate.swift */; };
 		808BB14F20E617C700A17D0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 808BB14D20E617C700A17D0B /* Main.storyboard */; };
 		808BB15120E617C700A17D0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 808BB15020E617C700A17D0B /* Assets.xcassets */; };
@@ -26,8 +24,6 @@
 
 /* Begin PBXFileReference section */
 		801C3CCF20F34C1B008BBBD1 /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
-		80264C8C20EB644F00928EA8 /* MasterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterTableViewCell.swift; sourceTree = "<group>"; };
-		80264C8E20EB786100928EA8 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		808BB14620E617C700A17D0B /* Register.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Register.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		808BB14920E617C700A17D0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		808BB14E20E617C700A17D0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -58,9 +54,6 @@
 		80264C8A20EB5FD900928EA8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				80264C8C20EB644F00928EA8 /* MasterTableViewCell.swift */,
-				80264C8E20EB786100928EA8 /* DetailTableViewCell.swift */,
-				801C3CCF20F34C1B008BBBD1 /* SummaryViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -71,6 +64,7 @@
 				808DA57420EB23CE003A8F74 /* DetailTableViewController.swift */,
 				80E3139B20E9B71300751744 /* MasterTableViewController.swift */,
 				80C8833F20F3154F004529ED /* GenderBỉthViewController.swift */,
+				801C3CCF20F34C1B008BBBD1 /* SummaryViewController.swift */,
 			);
 			name = Controller;
 			path = View/Controller;
@@ -197,11 +191,9 @@
 				80C8834020F3154F004529ED /* GenderBỉthViewController.swift in Sources */,
 				808DA57520EB23CE003A8F74 /* DetailTableViewController.swift in Sources */,
 				808BB14A20E617C700A17D0B /* AppDelegate.swift in Sources */,
-				80264C8F20EB786100928EA8 /* DetailTableViewCell.swift in Sources */,
 				80D07F3B20EA2D0500F39675 /* Distric.swift in Sources */,
 				80E3139C20E9B71300751744 /* MasterTableViewController.swift in Sources */,
 				80D07F3720EA252D00F39675 /* City.swift in Sources */,
-				80264C8D20EB644F00928EA8 /* MasterTableViewCell.swift in Sources */,
 				80D07F3920EA253D00F39675 /* DataService.swift in Sources */,
 				801C3CD020F34C1B008BBBD1 /* SummaryViewController.swift in Sources */,
 			);

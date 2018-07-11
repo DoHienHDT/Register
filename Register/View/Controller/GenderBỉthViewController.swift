@@ -10,6 +10,7 @@ import UIKit
 
 class GenderBỉthViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    @IBOutlet weak var nameTextField: UITextField!
     
     @IBOutlet var classButton : [UIButton]!
     @IBAction func buttonClick(_ sender: UIButton) {
@@ -18,7 +19,6 @@ class GenderBỉthViewController: UIViewController, UIPickerViewDelegate, UIPick
         }
         
         sender.isSelected = true
-        print(sender.currentTitle)
         UserDefaults.standard.set(sender.currentTitle, forKey: "gender")
         
     }
@@ -38,7 +38,7 @@ class GenderBỉthViewController: UIViewController, UIPickerViewDelegate, UIPick
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let seletedValue = pickerView.selectedRow(inComponent: 0)
-        print(seletedValue)
+//        print(seletedValue)
         UserDefaults.standard.set(seletedValue  , forKey: "age")
     }
     override func viewDidLoad() {
@@ -49,11 +49,13 @@ class GenderBỉthViewController: UIViewController, UIPickerViewDelegate, UIPick
       
     }
 
-//    func saveAge(){
-//        if  != nil {
-//            UserDefaults.standard.set(numbers.count, forKey: "age")
-//        }
-//    }
+
+    @IBAction func register(_ sender: UIButton) {
+        if nameTextField.text != "" {
+            UserDefaults.standard.set(nameTextField.text, forKey: "name")
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
